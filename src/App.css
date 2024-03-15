@@ -49,6 +49,11 @@
   transform-origin: top left;
 }
 
+.fall {
+  transform: rotate(10deg);
+  opacity: 0;
+}
+
 .task-list .actions {
   flex-shrink: 0;
   padding-left: 0.7em;

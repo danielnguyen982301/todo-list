@@ -16,6 +16,7 @@ function TaskList({
       <ul className="task-list">
         {tasks.filter(filterMap[filterKey]).map((task) => (
           <Task
+            key={task.id}
             task={task}
             toggleStatus={toggleStatus}
             deleteTask={deleteTask}

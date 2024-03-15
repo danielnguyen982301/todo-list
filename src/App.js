@@ -32,6 +32,7 @@ function App() {
         id: Date.now(),
         title: newTask,
         status: 0,
+        deleted: false,
       };
       setTasks([...tasks, addedTask]);
     }
@@ -46,9 +47,14 @@ function App() {
   }
 
   function deleteTask(id) {
-    const newList = tasks.filter((task) => task.id !== id);
-
-    setTasks((list) => [...newList]);
+    const updatedList = tasks.map((task) =>
+      id === task.id ? { ...task, deleted: true } : task
+    );
+    setTasks((list) => [...updatedList]);
+    const newList = tasks.filter((task) => id !== task.id);
+    setTimeout(() => {
+      setTasks((list) => [...newList]);
+    }, 500);
   }
 
   return (
