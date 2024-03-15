@@ -3,7 +3,7 @@ import React from "react";
 function Task({ task, toggleStatus, deleteTask }) {
   const { title, status, id } = task;
   return (
-    <li className={`${status ? "done" : ""} ${task.deleted ? "fall" : ""}`}>
+    <li className={status ? "done" : ""}>
       <span className="label">{title}</span>
       <div className="actions">
         <input

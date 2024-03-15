@@ -32,7 +32,6 @@ function App() {
         id: Date.now(),
         title: newTask,
         status: 0,
-        deleted: false,
       };
       setTasks([...tasks, addedTask]);
     }
